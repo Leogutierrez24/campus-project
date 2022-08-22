@@ -2,7 +2,6 @@ import React from "react";
 import "./navBar.scss";
 
 const Navbar = ({props}) => {
-    console.log(props)
     return(
         <header className="navbar-container">
             <div className="navbar-menu">
