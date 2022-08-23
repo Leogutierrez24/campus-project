@@ -1,0 +1,39 @@
+@import "../assets/variables/variables";
+
+.news-container {
+    width: 100%;
+    margin-bottom: 60px;
+    padding: 0 100px;
+}
+
+.news-title {
+    margin-bottom: 16px;
+}
+
+.news-section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+}
+
+.left-section {
+    width: 50%;
+    padding: 5px;
+}
+
+.right-section {
+    width: 50%;
+    padding: 5px
+}
+
+.top-side {
+    width: 100%;
+    height: 60%;
+    padding-bottom: 5px;
+}
+
+.bot-side {
+    width: 100%;
+    height: 40%;
+    padding-top: 5px;
+}

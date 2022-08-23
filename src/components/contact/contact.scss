@@ -1,0 +1,35 @@
+@import "../assets/variables/variables";
+
+.contact {
+    width: 100%;
+    height: fit-content;
+    padding: 10px 100px;
+    background-color: $blue-color;
+    color: #fff;
+}
+
+.contacts-title {
+    margin: 10px 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.contact-card {
+    width: 400px;
+    height: 120px;
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #fff;
+}
+
+.contact-title {
+    margin-bottom: 5px;
+}
+
+.contact-tel {
+    margin-bottom: 3px;
+}

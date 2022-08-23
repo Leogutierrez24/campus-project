@@ -1,11 +1,12 @@
 import React from "react";
+import "./new.scss";
 
-const New = ({title, subtitle, date}) => {
+const New = ({title, subtitle, date, priority}) => {
     return(
-        <section>
-            <h2>{title}</h2>
-            <p>{subtitle}</p>
-            <span>{date}</span>
+        <section className={`news-${priority}`}>
+            <h2 className="newsTitle">{title}</h2>
+            <p className="newsSubtitle">{subtitle}</p>
+            <span className="newsDate">{date}</span>
         </section>
     );
 };
