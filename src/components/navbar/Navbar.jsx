@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./navBar.scss";
 
 const Navbar = ({props}) => {
@@ -6,15 +7,15 @@ const Navbar = ({props}) => {
         <header className="navbar-container">
             <div className="navbar-menu">
                 <div className="campus-logo">
-                    <p>LOGO DEL SITIO</p>
+                    <p>LOGO</p>
                 </div>
-                <nav>
+                <nav className="nav-content">
                     <ul className="nav-links">
-                        <li className="nav-link"><a href="/#">Noticias</a></li>
-                        <li className="nav-link"><a href="/#">Contactos</a></li>
+                        <li className="nav-link"><a href="#news">Noticias</a></li>
+                        <li className="nav-link"><a href="#contact">Contactos</a></li>
                         <li className="nav-link">
                         {
-                            props ? <a href="/#">Mi Cuenta</a> : <a href="/#">Ingresar</a>
+                            props ? <a href="/#">Mi Cuenta</a> : <Link to="/login">Ingresar</Link>
                         }
                         </li>
                     </ul>

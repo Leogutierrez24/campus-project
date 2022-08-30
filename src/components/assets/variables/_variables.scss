@@ -1,3 +1,12 @@
+// variables
 $blue-color: #265FFF;
 $gray-color: #a5a5a5;
+$gray-light-color: #d3d2d2;
 $body-back-color: #EDEDED;
+
+// mixins
+@mixin titles-style($margin-bttm, $size, $color){
+    margin-bottom: $margin-bttm;
+    font-size: $size;
+    color: $color;
+}

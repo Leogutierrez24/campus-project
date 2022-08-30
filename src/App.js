@@ -1,12 +1,15 @@
-import './App.scss';
+import { Routes, Route } from "react-router-dom";
 import HomeContainer from './components/homeContainer/HomeContainer';
-import NavbarContainer from './components/navbarContainer/NavbarContainer';
+import LoginContainer from "./components/loginContainer/LoginContainer";
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <NavbarContainer />
-      <HomeContainer />
+      <Routes>
+        <Route path="/" element={ <HomeContainer /> } />
+        <Route path="/login" element={ <LoginContainer /> } />
+      </Routes>
     </div>
   );
 }
