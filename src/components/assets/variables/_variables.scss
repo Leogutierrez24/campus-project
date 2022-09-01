@@ -3,6 +3,8 @@ $blue-color: #265FFF;
 $gray-color: #a5a5a5;
 $gray-light-color: #d3d2d2;
 $body-back-color: #EDEDED;
+$red-color: #CC0000;
+$translucid-back: -webkit-gradient(linear, left top, left bottom, from(#00000080));
 
 // mixins
 @mixin titles-style($margin-bttm, $size, $color){

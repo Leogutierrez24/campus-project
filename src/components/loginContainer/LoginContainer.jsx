@@ -1,4 +1,4 @@
-import React from "react";
+import {React} from "react";
 import LoginForm from "../loginForm/LoginForm";
 import SigninForm from "../signinForm/SigninForm";
 import "./loginContainer.scss";
@@ -12,7 +12,7 @@ const LoginContainer = () => {
                     <LoginForm />
                 </div>
                 <div className="signin-container">
-                    <h3 className="signin-title">¿Sos ingresante?<br/>¡Crea tu cuenta para poder acceder al campus virtual!</h3>
+                    <h3 className="signin-title">Registrarme en el campus</h3>
                     <SigninForm />
                 </div>
             </div>

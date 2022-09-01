@@ -1,7 +1,19 @@
-import React from "react";
+import {React, useState} from "react";
+import Modal from "../modal/Modal";
 import "./signinForm.scss";
 
 const SigninForm = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const createAccount = (e) => {
+    e.preventDefault();
+    handleOpenModal();
+  }
+
+  const handleCloseModal = () => setShowModal(false);
+
+  const handleOpenModal = () => setShowModal(true);
+
   return (
     <form className="signin-form">
         <label htmlFor="email">Email
@@ -14,7 +26,10 @@ const SigninForm = () => {
             <input type="password" name="" id="sign-pass" className="inputForm" />
         </label>
         <input type="password" className="inputForm" placeholder="Confirme su contraseña" />
-        <button>Confirmar</button>
+        <button onClick={createAccount}>Confirmar</button>
+        {
+                (showModal) ? <Modal func={handleCloseModal}><p>¡Cuenta registrada con éxito!</p></Modal> : null
+        }
     </form>
   );
 };

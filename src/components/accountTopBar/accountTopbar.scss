@@ -1,0 +1,11 @@
+@import "../assets/variables/variables";
+
+.top-bar {
+    width: 100%;
+    height: 80px;
+    padding: 0 30px;
+    background-color: $blue-color;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}

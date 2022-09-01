@@ -1,0 +1,8 @@
+@import "../assets/variables/variables";
+
+.side-bar {
+    width: 230px;
+    height: 100vh;
+    padding-top: 30px;
+    border-right: 1px solid $gray-light-color;
+}

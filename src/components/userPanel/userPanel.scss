@@ -1,0 +1,16 @@
+.user-panel {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    width: 25px;
+    height: 25px;
+    filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(232deg) brightness(104%) contrast(102%);
+}
+
+.username {
+    padding-left: 20px;
+}
