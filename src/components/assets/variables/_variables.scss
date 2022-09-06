@@ -6,9 +6,14 @@ $body-back-color: #EDEDED;
 $red-color: #CC0000;
 $translucid-back: -webkit-gradient(linear, left top, left bottom, from(#00000080));
 
+// font family
+$text-font: 'Jost', sans-serif;
+$title-font: 'Noto Sans Balinese', sans-serif;
+
 // mixins
-@mixin titles-style($margin-bttm, $size, $color){
+@mixin titles-style($margin-bttm, $size, $color, $font){
     margin-bottom: $margin-bttm;
     font-size: $size;
     color: $color;
+    font-family: $font;
 }

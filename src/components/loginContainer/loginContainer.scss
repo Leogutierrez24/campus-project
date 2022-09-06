@@ -30,5 +30,5 @@
 }
 
 .login-title, .signin-title {
-    @include titles-style(15px, 24px, $blue-color);
+    @include titles-style(15px, 24px, $blue-color, $title-font);
 }

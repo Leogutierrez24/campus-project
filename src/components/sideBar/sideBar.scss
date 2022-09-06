@@ -2,7 +2,7 @@
 
 .side-bar {
     width: 230px;
-    height: 100vh;
+    height: calc(100vh - 80px);
     padding-top: 30px;
     border-right: 1px solid $gray-light-color;
 }
