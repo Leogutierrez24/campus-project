@@ -13,7 +13,7 @@ const Materias = () => {
             if(materias !== undefined){
                 resolve(materias);
             } else {
-                reject("No se encontrar materias");
+                reject("No se encontraron materias");
             }
         });
         chargeSubjects.then((data) => {
@@ -24,11 +24,10 @@ const Materias = () => {
             }, 2000);
         })
     }, []);
-    console.log(subjects)
 
     return(
         <div className="subjects-container">
-            <h3>Mis asignaturas</h3>
+            <h3 className="subjects-title">Mis asignaturas</h3>
             <div className="user-subjects">
                 {
                     (loading) ? <Loader /> : <Materia asignaturas={subjects} />

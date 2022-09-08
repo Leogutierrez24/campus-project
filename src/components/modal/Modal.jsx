@@ -2,12 +2,16 @@ import { React } from "react";
 import crossIcon from "../assets/icons/x-circle-fill.svg";
 import "./modal.scss";
 
-const Modal = ({ children, func }) => {
+const Modal = ({ children, props }) => {
+    const handleModalClose = (e) => {
+        e.preventDefault();
+        props(false)
+    }
     return(
         <div className="modal">
             <div className="modal-content">
                 <div className="modal-header">
-                    <button className="close-modal__btn" onClick={func}>
+                    <button className="close-modal__btn" onClick={handleModalClose}>
                         <img src={crossIcon} alt="cerrar" className="close-modal__icon"/>
                     </button>
                 </div>

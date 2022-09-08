@@ -10,10 +10,7 @@ const SigninForm = () => {
     handleOpenModal();
   }
 
-  const handleCloseModal = () => setShowModal(false);
-
   const handleOpenModal = () => setShowModal(true);
-
   return (
     <form className="signin-form">
         <label htmlFor="email">Email
@@ -28,7 +25,7 @@ const SigninForm = () => {
         <input type="password" className="inputForm" placeholder="Confirme su contraseña" />
         <button onClick={createAccount}>Confirmar</button>
         {
-                (showModal) ? <Modal func={handleCloseModal}><p>¡Cuenta registrada con éxito!</p></Modal> : null
+                (showModal) ? <Modal props={setShowModal}><p>¡Cuenta registrada con éxito!</p></Modal> : null
         }
     </form>
   );
