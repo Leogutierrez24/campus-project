@@ -32,3 +32,12 @@
 .login-title, .signin-title {
     @include titles-style(15px, 24px, $blue-color, $title-font);
 }
+
+.help-links {
+    margin: 5px 0;
+    text-decoration: none;
+    color: $blue-color;
+    font-family: $text-font;
+    font-size: 14px;
+    display: block;
+}

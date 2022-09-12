@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import "./new.scss";
 
 const New = ({title, subtitle, date, priority}) => {

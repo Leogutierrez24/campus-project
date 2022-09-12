@@ -17,8 +17,25 @@
     transition: .2s ease-in-out;
     &::placeholder{ font-style: italic; }
     &:focus-visible{
-        box-shadow: inset 0 0 4px 0px $gray-light-color;
+        background-color: $gray-light-color;
         border-radius: 3px;
         transition: .2s ease-in-out;
+    }
+}
+
+.login-btn, .signin-btn {
+    height: 30px;
+    background-color: $blue-color;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #fff;
+    font-family: $text-font;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    transition: .1s ease-in-out;
+    &:active {
+        background-color: $blue-color-light;
+        transition: .1s ease-in-out;
     }
 }

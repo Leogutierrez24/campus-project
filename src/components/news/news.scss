@@ -7,7 +7,7 @@
 }
 
 .news-title {
-    margin-bottom: 16px;
+    @include titles-style(16px, 24px, #000, $title-font);
 }
 
 .news-section {

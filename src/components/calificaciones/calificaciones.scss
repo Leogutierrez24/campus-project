@@ -1,0 +1,10 @@
+@import "../assets/variables/variables";
+
+.grades-container {
+    width: 100;
+    padding: 35px;
+}
+
+.grades-title {
+    @include titles-style(10px, 18px, #000, $title-font);
+}

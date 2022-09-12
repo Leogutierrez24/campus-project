@@ -8,7 +8,7 @@ const UserPanel = () => {
     const toggableDiv = useRef(null);
     const daArrow = useRef(null);
     const [divOpen, setDivOpen] = useState(false);
-    const handleOpenDiv = () => {
+    const handleOpenDiv = (e) => {
         if(divOpen){
             toggableDiv.current.classList.remove("itsOpen");
             daArrow.current.classList.remove("itsRotate");
@@ -31,7 +31,7 @@ const UserPanel = () => {
                 <img src={arrowIcon} alt="icono desplegar" ref={daArrow} />
             </button>
             <div className="toggle-menu" ref={toggableDiv}>
-                <Link to="/account/perfil" className="toggle-menu__link">Modificar mis datos</Link>
+                <Link to="/account/perfil" className="toggle-menu__link" onClick={handleOpenDiv}>Modificar mis datos</Link>
                 <button className="toggle-menu__btn">Cerrar sesión</button>
             </div>
         </div>
