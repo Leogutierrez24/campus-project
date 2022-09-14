@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import UserProvider from "./components/context/UserContext";
 import HomeContainer from './components/homeContainer/HomeContainer';
 import LoginContainer from "./components/loginContainer/LoginContainer";
 import Account from "./components/account/Account";
@@ -11,6 +12,7 @@ import './App.scss';
 
 function App() {
   return (
+    <UserProvider>
     <div className="App">
       <Routes>
         <Route path="/" element={ <HomeContainer /> } />
@@ -24,6 +26,7 @@ function App() {
         </Route>
       </Routes>
     </div>
+    </UserProvider>
   );
 }
 
