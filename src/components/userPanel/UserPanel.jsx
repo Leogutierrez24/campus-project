@@ -1,10 +1,12 @@
 import { React, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { ContextUser } from "../context/UserContext";
 import userIcon from "../assets/icons/person-circle.svg";
 import arrowIcon from "../assets/icons/caret-down-fill.svg";
 import "./userPanel.scss";
 
 const UserPanel = () => {
+    const { logoutUser, userState } = ContextUser();
     const toggableDiv = useRef(null);
     const daArrow = useRef(null);
     const [divOpen, setDivOpen] = useState(false);
@@ -32,8 +34,11 @@ const UserPanel = () => {
             </button>
             <div className="toggle-menu" ref={toggableDiv}>
                 <Link to="/account/perfil" className="toggle-menu__link" onClick={handleOpenDiv}>Modificar mis datos</Link>
-                <button className="toggle-menu__btn">Cerrar sesión</button>
+                <button className="toggle-menu__btn" onClick={logoutUser}>Cerrar sesión</button>
             </div>
+            {
+                !(userState) ? <Navigate to="/" /> : null 
+            }
         </div>
     );
 }

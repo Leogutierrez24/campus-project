@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navBar.scss";
 
-const Navbar = ({props}) => {
+const Navbar = () => {
     return(
         <header className="navbar-container">
             <div className="navbar-menu">
@@ -13,11 +13,7 @@ const Navbar = ({props}) => {
                     <ul className="nav-links">
                         <li className="nav-link"><a href="#news">Noticias</a></li>
                         <li className="nav-link"><a href="#contact">Contactos</a></li>
-                        <li className="nav-link">
-                        {
-                            props ? <a href="/#">Mi Cuenta</a> : <Link to="/login">Ingresar</Link>
-                        }
-                        </li>
+                        <Link to="/login" className="nav-link" >Ingresar</Link>
                     </ul>
                 </nav>
             </div>

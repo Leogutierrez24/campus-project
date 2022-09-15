@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { collection, query, where, getDocs, getDoc } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 
 const UserContext = createContext();
@@ -8,9 +8,15 @@ export const ContextUser = () => useContext(UserContext);
 
 const UserProvider = ({ children }) => {
     const [userState, setUserState] = useState(false);
+    const [userLogged, setUserLogged] = useState({});
     
     const checkUser = () => {
         
+    }
+
+    const logoutUser = () => {
+        setUserLogged({});
+        setUserState(false);
     }
 
     const loginUser = async (username, password) => {
@@ -20,13 +26,15 @@ const UserProvider = ({ children }) => {
            const userFinded = { ...doc.data() }
            if(password === userFinded.password){
                 console.log("sesion iniciada")
+                setUserLogged(userFinded);
+                setUserState(true);
            } else {
                 console.log("error de usuario o contraseña")
            }
         })
     }
     return(
-        <UserContext.Provider value={{checkUser, loginUser}}>
+        <UserContext.Provider value={{checkUser, loginUser, logoutUser, userState, userLogged}}>
             {children}
         </UserContext.Provider>
     );

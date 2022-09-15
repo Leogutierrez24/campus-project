@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import UserProvider from "./components/context/UserContext";
 import HomeContainer from './components/homeContainer/HomeContainer';
-import LoginContainer from "./components/loginContainer/LoginContainer";
+import AccountLogin from "./components/accountLogin/AccountLogin";
 import Account from "./components/account/Account";
 import Materias from "./components/materias/Materias";
 import Calificaciones from "./components/calificaciones/Calificaciones";
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={ <HomeContainer /> } />
-        <Route path="/login" element={ <LoginContainer /> } />
+        <Route path="/login" element={ <AccountLogin /> } />
         <Route path="/account" element={ <Account /> }>
           <Route path="materias" element={ <Materias /> } />
           <Route path="calificaciones" element={<Calificaciones />} />

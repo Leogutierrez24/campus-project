@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarContainer from "../navbarContainer/NavbarContainer";
+import Navbar from "../navbar/Navbar";
 import Contact from "../contact/Contact";
 import News from "../news/News";
 import "./home.scss";
@@ -7,7 +7,7 @@ import "./home.scss";
 const Home = () => {
     return(
         <div className="home">
-            <NavbarContainer />
+            <Navbar />
             <div className="hero">
                 <h1 className="home-title">Bienvenido al campus virtual</h1>
             </div>
