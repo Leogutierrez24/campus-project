@@ -1,29 +1,30 @@
 import { React, useState, useEffect } from "react";
+import { getDocs, collection, where, query } from "firebase/firestore";
+import db from "../firebase/firebaseConfig";
 import Materia from "../materia/Materia";
 import Loader from "../loader/Loader";
-import materias from "../data/materias";
+import { ContextUser } from "../context/UserContext";
 import "./materias.scss";
 
 const Materias = () => {
     const [loading, setLoading] = useState(false);
     const [subjects, setSubjects] = useState();
+    const { userLogged } = ContextUser();
 
     useEffect(() => {
-        const chargeSubjects = new Promise((resolve, reject) => {
-            if(materias !== undefined){
-                resolve(materias);
-            } else {
-                reject("No se encontraron materias");
-            }
-        });
-        chargeSubjects.then((data) => {
-            setLoading(true);
-            setTimeout(() => {
+        setLoading(true);
+        const getUserSubjects = async () => { // for some reason trying to get by one document does not work
+            const q = query(collection(db, "userSubjects"), where("nFile", "==", userLogged.nFile));
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((document) => {
                 setLoading(false);
-                setSubjects(data);
-            }, 2000);
-        })
-    }, []);
+                setSubjects(document.data().subjects);
+            });
+        }
+        getUserSubjects();
+    }, [userLogged.nFile]);
+
+    console.log(subjects)
 
     return(
         <div className="subjects-container">

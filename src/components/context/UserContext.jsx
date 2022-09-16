@@ -23,15 +23,14 @@ const UserProvider = ({ children }) => {
         const q = query(collection(db, "users"), where("email", "==", `${username}`));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
-           const userFinded = { ...doc.data() }
+           const userFinded = { "id": doc.id, ...doc.data() }
            if(password === userFinded.password){
-                console.log("sesion iniciada")
                 setUserLogged(userFinded);
                 setUserState(true);
            } else {
                 console.log("error de usuario o contraseña")
            }
-        })
+        });
     }
     return(
         <UserContext.Provider value={{checkUser, loginUser, logoutUser, userState, userLogged}}>
