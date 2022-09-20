@@ -1,12 +1,11 @@
 import { React, useState } from "react";
 import Modal from "../modal/Modal";
 import DotsIcon from "../assets/icons/three-dots.svg";
-import "./materia.scss";
+import "./subject.scss";
 
-const Materia = ({asignaturas}) => {
+const Subject = ({asignaturas}) => {
     const [showModal, setShowModal] = useState(false);
     const handleModalOpen = () => {setShowModal(true)}
-    
     return(
         <>
             {
@@ -41,4 +40,4 @@ const Materia = ({asignaturas}) => {
     );
 }
 
-export default Materia;
+export default Subject;

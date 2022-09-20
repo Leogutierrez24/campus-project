@@ -1,7 +1,8 @@
 import { React } from "react";
+import GradesItems from "../gradesItem/GradesItem";
 import "./gradesTable.scss";
 
-const GradesTable = () => {
+const GradesTable = ({props}) => {
     return(
         <table className="grades-table">
             <thead className="grades-table__header">
@@ -14,20 +15,13 @@ const GradesTable = () => {
                 </tr>
             </thead>
             <tbody className="grades-table__body">
-                <tr className="grade-row">
-                    <td className="grade-element">01</td>
-                    <td className="grade-element">Física e Introducción a la biofísica</td>
-                    <td className="grade-element">8</td>
-                    <td className="grade-element">Aprobada</td>
-                    <td className="grade-element">19/07/2017</td>
-                </tr>
-                <tr className="grade-row">
-                    <td className="grade-element">01</td>
-                    <td className="grade-element">Física e Introducción a la biofísica</td>
-                    <td className="grade-element">8</td>
-                    <td className="grade-element">Aprobada</td>
-                    <td className="grade-element">19/07/2017</td>
-                </tr>
+                {
+                    props?.map((item) => {
+                        return(
+                            <GradesItems props={item} key={item.id}/>
+                        )
+                    })
+                }
             </tbody>
         </table>
     );

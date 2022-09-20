@@ -1,8 +1,9 @@
 import { React, useEffect } from "react";
 import { collection, getDocs, getDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
+import "./userProfile.scss";
 
-const UserData = () => {
+const UserProfile = () => {
     useEffect(() => {
         const getData = async () => {
             const data = await getDocs(collection(db, 'users'));
@@ -19,9 +20,9 @@ const UserData = () => {
     }, []);
 
     return(
-        <div>
+        <div className="profile-container">
             perfil
         </div>);
 }
 
-export default UserData;
+export default UserProfile;

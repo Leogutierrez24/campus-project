@@ -1,0 +1,17 @@
+@import "../assets/variables/variables";
+
+.subjects-container {
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 35px;
+}
+
+.subjects-title {
+    @include titles-style(10px, 18px, #000, $title-font);
+}
+
+.user-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}

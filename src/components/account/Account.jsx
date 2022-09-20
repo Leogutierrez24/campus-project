@@ -1,6 +1,6 @@
 import { React } from "react";
 import { Outlet } from "react-router-dom";
-import { useCheckWindowSize } from "./hooks/useCheckWindowSize";
+import { useCheckWindowSize } from "../hooks/useCheckWindowSize";
 import AccountTopbar from "../accountTopBar/AccountTopbar";
 import SideBar from "../sideBar/SideBar";
 import "./account.scss";
