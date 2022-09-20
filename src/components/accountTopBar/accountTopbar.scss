@@ -11,3 +11,39 @@
     position: relative;
     z-index: 9;
 }
+
+.top-bar__leftSide {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > div {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+    }
+}
+
+.topbar-menu-btn {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .1s ease-in-out;
+    &:active {
+        background-color: #e9e9e945;
+        transition: .1s ease-in-out;
+    }
+}
+
+.topbar-menu-btn__img {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(207deg) brightness(102%) contrast(101%);
+}

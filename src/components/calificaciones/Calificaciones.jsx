@@ -1,6 +1,6 @@
 import { React } from "react";
 import GradesTable from "../gradesTable/GradesTable";
-import "../calificaciones/calificaciones.scss";
+import "./calificaciones.scss";
 
 const Calificaciones = () => {
     return(

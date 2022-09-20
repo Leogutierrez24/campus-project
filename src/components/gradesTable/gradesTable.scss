@@ -1,0 +1,57 @@
+@import "../assets/variables/variables";
+
+.grades-table {
+    width: 100%;
+    padding: 5px;
+    border-collapse: collapse;
+    border: 1px solid $body-back-color;
+    box-shadow: 0 0 4px 2px $shadow-color;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    font-family: $text-font;
+}
+
+.grade-row {
+    width: 100%;
+    text-align: center;
+}
+
+.grade-element {
+    height: 40px;
+}
+
+.grades-table__header-container {
+    background-color: $body-back-color;
+}
+
+.header-element__cod {
+    min-width: 49px;
+    min-height: fit-content;
+    height: 40px;
+}
+
+.header-element__subject {
+    min-width: 205px;
+    min-height: fit-content;
+    height: 40px;
+}
+
+.header-element__calif {
+    min-width: 33px;
+    min-height: fit-content;
+    height: 40px;
+}
+
+.header-element__status {
+    min-width: 111px;
+    min-height: fit-content;
+    height: 40px;
+}
+
+.header-element__date {
+    min-width: 73px;
+    min-height: fit-content;
+    height: 40px;
+}
