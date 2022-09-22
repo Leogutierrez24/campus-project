@@ -37,3 +37,32 @@
     height: 40%;
     padding-top: 5px;
 }
+
+@media all and (max-width: 1024px){
+    .news-container {
+        padding: 0 70px;
+    }
+}
+
+@media all and (max-width: 860px){
+    .news-container {
+        padding: 0 40px;
+    }
+}
+
+@media all and (max-width: 768px){
+    .news-container {
+        padding: 0 20px;
+    }
+}
+
+@media all and (max-width: 576px){
+    .news-section {
+        height: fit-content;
+        display: block;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+    }
+}

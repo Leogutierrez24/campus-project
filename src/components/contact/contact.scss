@@ -6,6 +6,8 @@
     padding: 10px 100px;
     background-color: $blue-color;
     color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 .contacts-title {
@@ -14,9 +16,12 @@
 }
 
 .contact-info {
+    max-width: 1224px;
+    min-height: 600px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-self: center;
 }
 
 .contact-card {
@@ -37,4 +42,30 @@
 .contact-tel {
     margin-bottom: 3px;
     font-size: 14px;
+}
+
+@media screen and (max-width: 1024px){
+    .contact {
+        padding: 10px 70px;
+    }
+
+    .contacts-title {
+        text-align: center;
+    }
+
+    .contact-card {
+        width: 350px;
+    }
+}
+
+@media all and (max-width: 860px){
+    .contact {
+        padding: 10px 0;
+    }
+}
+
+@media all and (max-width: 860px){
+    .contact {
+        padding: 10px 20px;
+    }
 }

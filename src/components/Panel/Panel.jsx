@@ -1,12 +1,11 @@
 import { React, useRef, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { ContextUser } from "../context/UserContext";
 import userIcon from "../assets/icons/person-circle.svg";
 import arrowIcon from "../assets/icons/caret-down-fill.svg";
-import "./userPanel.scss";
+import "./panel.scss";
 
-const UserPanel = () => {
-    const { logoutUser, userState } = ContextUser();
+const Panel = ({logoutUser, userState, userLogged}) => {
+    const userInformation = { ...userLogged.userInfo};
     const toggableDiv = useRef(null);
     const daArrow = useRef(null);
     const [divOpen, setDivOpen] = useState(false);
@@ -28,7 +27,7 @@ const UserPanel = () => {
                     <img src={userIcon} className="user-icon" alt="avatar de usuario" />
                 </div>
                 <div className="username">
-                    <p>Nombre del usuario</p>
+                    <p>{`${userInformation.name} ${userInformation.surname}`}</p>
                 </div>
                 <img src={arrowIcon} alt="icono desplegar" ref={daArrow} />
             </button>
@@ -43,4 +42,4 @@ const UserPanel = () => {
     );
 }
 
-export default UserPanel;
+export default Panel;

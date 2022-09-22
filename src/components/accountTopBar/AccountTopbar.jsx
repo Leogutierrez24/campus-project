@@ -1,6 +1,6 @@
 import { React } from "react";
 import { useOpenMenu } from "../hooks/useOpenMenu";
-import UserPanel from "../userPanel/UserPanel";
+import UserPanelContainer from "../userPanelContainer/UserPanelContainer";
 import menuIcon from "../assets/icons/list.svg";
 import SideBar from "../sideBar/SideBar";
 import "./accountTopbar.scss";
@@ -24,7 +24,7 @@ const AccountTopbar = () => {
                     <p>LOGO</p>
                 </div>
             </div>
-            <UserPanel />
+            <UserPanelContainer />
             {
                 openMenu && <SideBar props={handleCloseMenu} />
             }

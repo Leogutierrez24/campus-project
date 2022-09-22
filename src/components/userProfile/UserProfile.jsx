@@ -1,27 +1,15 @@
-import { React, useEffect } from "react";
-import { collection, getDocs, getDoc } from "firebase/firestore";
-import db from "../firebase/firebaseConfig";
+import { React } from "react";
+
 import "./userProfile.scss";
+import Loader from "../loader/Loader";
 
 const UserProfile = () => {
-    useEffect(() => {
-        const getData = async () => {
-            const data = await getDocs(collection(db, 'users'));
-            data.forEach(async (documento) =>{
-                let usuario = documento.data();
-                let userData = await getDoc(usuario.userInfo);
-                // usuario = {...userData};
-                console.log(userData)
-                console.log(usuario);
-                // console.log(documento.data())
-            });
-        }
-        getData();
-    }, []);
-
+    
     return(
         <div className="profile-container">
-            perfil
+            <div style={{display: "flex"}}>
+                <Loader />
+            </div>
         </div>);
 }
 

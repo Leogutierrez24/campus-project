@@ -46,3 +46,9 @@
     font-weight: bold;
     font-style: italic;
 }
+
+@media all and (max-width: 576px){
+    .news-first, .news-second, .news-third {
+        height: 200px;
+    }
+}

@@ -4,6 +4,9 @@
     width: 100%;
     height: calc(100vh - 80px);
     padding: 35px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .grades-title {
