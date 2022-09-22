@@ -1,6 +1,10 @@
 @import "../assets/variables/variables";
 
-.profile-container {
+.userProfile-container {
     width: 100%;
     height: calc(100vh - 80px);
+    padding: 35px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
