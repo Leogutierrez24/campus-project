@@ -1,0 +1,53 @@
+@import "../assets/variables/variables";
+
+.userInformationForm-container {
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 35px;
+    background-color: #fff;
+}
+
+.userInformationForm {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputReference {
+    display: flex;
+    flex-direction: column;
+    > span {
+        margin-bottom: 6px;
+        font-family: $text-font;
+    }
+}
+
+.formSubtitle {
+    margin-bottom: 12px;
+    font-family: $title-font;
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.changeButton, .cancelButton {
+    width: 150px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    font-family: $text-font;
+    letter-spacing: .5px;
+    border-radius: 2px;
+    color: #fff;
+}
+
+.changeButton {
+    background-color: $blue-color;
+}
+
+.cancelButton {
+    background-color: $red-color;
+}
