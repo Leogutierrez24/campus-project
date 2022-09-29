@@ -9,34 +9,14 @@ export const ContextUser = () => useContext(UserContext);
 const UserProvider = ({ children }) => {
     const [userState, setUserState] = useState(false);
     const [userLogged, setUserLogged] = useState({});
-    
-    const checkUser = () => {
-        
-    }
-
-    const logoutUser = () => {
-        setUserLogged({});
-        setUserState(false);
-    }
-
-    const getUserInfo = async (user) => {
-        let userInfo = {}
-        const q = query(collection(db, "userData"), where("id", "==", user.nFile));
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-            userInfo = { ...doc.data() };
-        });
-        return userInfo;
-    }
 
     const loginUser = async (username, password) => {
         const q = query(collection(db, "users"), where("email", "==", `${username}`));
         const querySnapshot = await getDocs(q);
-        querySnapshot.forEach(async (doc) => {
+        querySnapshot.forEach((doc) => {
             const userFinded = { ...doc.data() };
-            const userInfo = await getUserInfo(doc.data());
             if(password === userFinded.password){
-                setUserLogged({...userFinded, userInfo});
+                setUserLogged(userFinded);
                 setUserState(true);
             } else {
                 console.log("error de usuario o contraseña")
@@ -44,8 +24,13 @@ const UserProvider = ({ children }) => {
         });
     }
     
+    const logoutUser = () => {
+        setUserLogged({});
+        setUserState(false);
+    }
+    
     return(
-        <UserContext.Provider value={{checkUser, loginUser, logoutUser, userState, userLogged}}>
+        <UserContext.Provider value={{loginUser, logoutUser, userState, userLogged}}>
             {children}
         </UserContext.Provider>
     );

@@ -5,7 +5,19 @@
     height: calc(100vh - 80px);
     padding: 35px;
     background-color: #fff;
-    // display: flex;
-    // flex-direction: column;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    > ul {
+        list-style: none;
+        font-family: $text-font;
+    }
+}
+
+.userProfile-title, .userProfile-subtitle {
+    margin-bottom: 12px;
+    font-family: $title-font;
+}
+
+.userInfo-item {
+    margin-bottom: 6px;
 }
