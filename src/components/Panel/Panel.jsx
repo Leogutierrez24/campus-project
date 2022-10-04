@@ -1,11 +1,11 @@
 import { React, useRef, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import userIcon from "../assets/icons/person-circle.svg";
+import Loader from "../loader/Loader";
 import arrowIcon from "../assets/icons/caret-down-fill.svg";
 import "./panel.scss";
 
-const Panel = ({logoutUser, userState, userLogged}) => {
-    const userInformation = { ...userLogged.userInfo};
+const Panel = ({logoutUser, userState, userInfo, loading}) => {
+    const userInformation = {...userInfo};
     const toggableDiv = useRef(null);
     const daArrow = useRef(null);
     const [divOpen, setDivOpen] = useState(false);
@@ -22,15 +22,19 @@ const Panel = ({logoutUser, userState, userLogged}) => {
     }
     return(
         <div className="user-panel">
-            <button className="user-panel__btn" onClick={handleOpenDiv}>
-                <div className="user-avatar">
-                    <img src={userIcon} className="user-icon" alt="avatar de usuario" />
-                </div>
-                <div className="username">
-                    <p>{`${userInformation.name} ${userInformation.surname}`}</p>
-                </div>
-                <img src={arrowIcon} alt="icono desplegar" ref={daArrow} />
-            </button>
+            {
+                (loading)
+                    ? <Loader />
+                    : <button className="user-panel__btn" onClick={handleOpenDiv}>
+                        <div className="user-avatar">
+                            <img src={userInformation.avatar} className="user-icon" alt="avatar de usuario" />
+                        </div>
+                        <div className="username">
+                            <p>{`${userInformation.name} ${userInformation.surname}`}</p>
+                        </div>
+                        <img src={arrowIcon} alt="icono desplegar" ref={daArrow} />
+                    </button>
+            }
             <div className="toggle-menu" ref={toggableDiv}>
                 <Link to="/account/perfil" className="toggle-menu__link" onClick={handleOpenDiv}>Modificar mis datos</Link>
                 <button className="toggle-menu__btn" onClick={logoutUser}>Cerrar sesión</button>

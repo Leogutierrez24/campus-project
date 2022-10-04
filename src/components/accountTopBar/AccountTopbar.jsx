@@ -3,6 +3,7 @@ import { useOpenMenu } from "../hooks/useOpenMenu";
 import UserPanelContainer from "../userPanelContainer/UserPanelContainer";
 import menuIcon from "../assets/icons/list.svg";
 import SideBar from "../sideBar/SideBar";
+import CampusLogo  from "../campusLogo/CampusLogo";
 import "./accountTopbar.scss";
 import { useCheckWindowSize } from "../hooks/useCheckWindowSize";
 
@@ -20,9 +21,7 @@ const AccountTopbar = () => {
                         </button> 
                         : null
                 }
-                <div className="campus-logo">
-                    <p>LOGO</p>
-                </div>
+                <CampusLogo />
             </div>
             <UserPanelContainer />
             {

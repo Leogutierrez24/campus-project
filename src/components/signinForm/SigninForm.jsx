@@ -8,8 +8,14 @@ const SigninForm = ({ props }) => {
     }
     return(
         <form className="signin-form">
-            <label htmlFor="email">Email
-                <input type="email" name="" id="email" className="inputForm" />
+            <label htmlFor="newEmail">Email
+                <input type="email" name="" id="newEmail" className="inputForm" />
+            </label>
+            <label htmlFor="newName">Nombre
+                <input type="text" name="" id="newName" className="inputForm" />
+            </label>
+            <label htmlFor="newSurname">Apellido
+                <input type="text" name="" id="newSurname" className="inputForm" />
             </label>
             <label htmlFor="idNumber">Número de Legajo
                 <input type="text" name="" id="idNumber" className="inputForm" />

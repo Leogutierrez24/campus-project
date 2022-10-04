@@ -10,9 +10,9 @@ const DataList = ({props}) => {
             </ul>
             <h3 className="userProfile-subtitle">Información adiccional</h3>           
             <ul>
-                <li className="userInfo-item">Domicilio: </li>
-                <li className="userInfo-item">N° de telefono: </li>
-                <li className="userInfo-item">Email personal: </li>
+                <li className="userInfo-item">Domicilio: {props.adress}</li>
+                <li className="userInfo-item">N° de telefono: {props.telephone}</li>
+                <li className="userInfo-item">Email personal: {props.email}</li>
             </ul>
         </>
     );

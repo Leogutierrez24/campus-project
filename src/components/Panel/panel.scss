@@ -17,7 +17,7 @@
     color: #fff;
     font-family: $text-font;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     & > img {
         width: 18px;
@@ -28,9 +28,9 @@
 }
 
 .user-icon {
-    width: 25px;
-    height: 25px;
-    filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(232deg) brightness(104%) contrast(102%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .username {
@@ -84,4 +84,22 @@
 .itsRotate {
     transform: rotate(180deg);
     transition: .2s ease-in-out;
+}
+
+@media all and (max-width: 576px){
+    .campus-logo {
+        display: none;
+    }
+}
+
+@media all and (min-width: 425px){
+    .user-avatar {
+        display: none;
+    }
+}
+
+@media all and (max-width: 425px){
+    .username {
+        display: none;
+    }
 }

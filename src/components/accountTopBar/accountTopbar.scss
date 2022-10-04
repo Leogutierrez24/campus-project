@@ -15,14 +15,8 @@
 .top-bar__leftSide {
     width: 300px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    > div {
-        width: 70%;
-        display: flex;
-        justify-content: center;
-        align-items: center;   
-    }
 }
 
 .topbar-menu-btn {
@@ -46,4 +40,10 @@
     width: 30px;
     height: 30px;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(207deg) brightness(102%) contrast(101%);
+}
+
+@media all and (max-width: 576px){
+    .top-bar__leftSide {
+        width: fit-content;
+    }
 }
