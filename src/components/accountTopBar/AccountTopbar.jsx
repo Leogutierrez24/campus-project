@@ -25,7 +25,7 @@ const AccountTopbar = () => {
             </div>
             <UserPanelContainer />
             {
-                openMenu && <SideBar props={handleCloseMenu} />
+                (windowSize.innerWidth <= 1024 && openMenu === true) ? <SideBar props={handleCloseMenu} /> : null
             }
         </header>
     );

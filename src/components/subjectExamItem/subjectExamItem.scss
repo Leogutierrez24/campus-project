@@ -1,0 +1,28 @@
+@import "../assets/variables/variables";
+
+.subjectExamItem {
+    width: 600px;
+    height: 30px;
+    background-color: $body-back-color;
+    overflow: hidden;
+}
+
+.subjectExamItem-header {
+    width: 100%;
+    height: 30px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subjectName {
+    font-size: 18px;
+}
+
+.openTable-btn {
+    cursor: pointer;
+}
+
+.showContent {
+    height: fit-content;
+}

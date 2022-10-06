@@ -1,10 +1,17 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
+import CloseButton from "../closeButton/CloseButton";
+import closeArrowIcon from "../assets/icons/arrow-left.svg";
 import "./sideBar.scss";
 
 const SideBar = ({props}) => {
     return(
         <div className="side-bar">
+            <div className="closeBtn-container">
+                <CloseButton btnFunction={props}>
+                    <img src={closeArrowIcon} alt="cerrar menú" />
+                </CloseButton>
+            </div>
             <nav className="menu-links">
                 <Link to="/account/materias" className="menu-link" onClick={props}><span>Materias</span></Link>
                 <Link to="/account/calificaciones" className="menu-link" onClick={props}><span>Calificaciones</span></Link>

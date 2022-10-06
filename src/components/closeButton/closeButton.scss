@@ -1,0 +1,25 @@
+@import "../assets//variables/variables";
+
+.close-button {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(128, 128, 128, 0.103);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > img {
+        width: 20px;
+        height: 20px;
+        filter: invert(99%) sepia(1%) saturate(672%) hue-rotate(316deg) brightness(91%) contrast(81%);
+        transition: .1s ease-in-out;
+    }
+    &:hover{
+        > img {
+            transition: .1s ease-in-out;
+            filter: invert(29%) sepia(35%) saturate(7486%) hue-rotate(222deg) brightness(103%) contrast(101%);
+        }
+    }
+}

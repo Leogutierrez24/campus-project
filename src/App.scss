@@ -12,3 +12,11 @@ body {
     height: 100vh;
     background-color: $body-back-color;
 }
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}

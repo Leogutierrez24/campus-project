@@ -3,13 +3,14 @@ import Modal from "../modal/Modal";
 import SigninForm from "../signinForm/SigninForm";
 
 const SigninFormContainer = () => {
-  const [showModal, setShowModal] = useState(false);
-  const handleOpenModal = () => setShowModal(true);
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
   return (
     <>
       <SigninForm props={handleOpenModal} />
       {
-              (showModal) ? <Modal props={setShowModal}><p>¡Cuenta registrada con éxito!</p></Modal> : null
+              (openModal) ? <Modal handleCloseModal={handleCloseModal}><p>¡Cuenta registrada con éxito!</p></Modal> : null
       }
     </>
   );

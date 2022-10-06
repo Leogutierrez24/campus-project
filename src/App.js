@@ -6,7 +6,7 @@ import Account from "./components/account/Account";
 import SubjectsContainer from "./components/subjectsContainer/SubjectsContainer";
 import UserGradesContainer from "./components/userGradesContainer/UserGradesContainer";
 import UserProfileContainer from "./components/userProfileContainer/UserProfileContainer";
-import AddExam from "./components/addExam/AddExam";
+import AddExamContainer from "./components/addExamContainer/AddExamContainer";
 import AddSubjects from "./components/addSubjects/AddSubjects";
 import './App.scss';
 
@@ -21,7 +21,7 @@ function App() {
           <Route path="materias" element={ <SubjectsContainer /> } />
           <Route path="calificaciones" element={<UserGradesContainer />} />
           <Route path="perfil" element={ <UserProfileContainer /> } />
-          <Route path="inscrip-examenes" element={ <AddExam /> } />
+          <Route path="inscrip-examenes" element={ <AddExamContainer /> } />
           <Route path="inscrip-materias" element={ <AddSubjects /> } />
         </Route>
       </Routes>

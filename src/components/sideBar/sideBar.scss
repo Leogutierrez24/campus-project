@@ -45,6 +45,13 @@
     }
 }
 
+.closeBtn-container {
+    width: 90%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media only screen and (max-width: 1024px){
     .side-bar {
         height: 100vh;
@@ -52,5 +59,11 @@
         position: fixed;
         left: 0;
         z-index: 15;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .closeBtn-container {
+        display: none;
     }
 }
