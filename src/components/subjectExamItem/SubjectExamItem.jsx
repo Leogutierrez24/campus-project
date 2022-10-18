@@ -1,26 +1,18 @@
-import {React, useRef} from "react";
+import {React} from "react";
 import ExamsList from "../examsList/ExamsList";
 import downArrow from "../assets/icons/arrow-down-circle.svg";
+import ToggleDiv from "../toggleDiv/ToggleDiv";
 import "./subjectExamItem.scss";
 
 const SubjectExamItem = () => {
-    const divRef = useRef(null);
-
-
-    const handleToggableDiv = () => {
-        divRef.current.classList.toggle("showContent");
-    }
-
     return(
-        <div className="subjectExamItem" ref={divRef}>
+        <ToggleDiv {...{divClass: "subjectExamItem"}}>
             <div className="subjectExamItem-header">
                 <p className="subjectName">Introducción al pensamiento científico</p>
-                <button className="openTable-btn" onClick={handleToggableDiv}>
-                    <img src={downArrow} alt="abrir" className="arrowImg" />
-                </button> 
+                <img src={downArrow} alt="Ver más" />
             </div>
             <ExamsList />
-        </div>
+        </ToggleDiv>
     )
 }
 
