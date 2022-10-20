@@ -4,14 +4,14 @@ import downArrow from "../assets/icons/arrow-down-circle.svg";
 import ToggleDiv from "../toggleDiv/ToggleDiv";
 import "./subjectExamItem.scss";
 
-const SubjectExamItem = () => {
+const SubjectExamItem = ({props}) => {
     return(
         <ToggleDiv {...{divClass: "subjectExamItem"}}>
             <div className="subjectExamItem-header">
-                <p className="subjectName">Introducción al pensamiento científico</p>
+                <p className="subjectName">{props.name}</p>
                 <img src={downArrow} alt="Ver más" />
             </div>
-            <ExamsList />
+            <ExamsList options={props.option} />
         </ToggleDiv>
     )
 }

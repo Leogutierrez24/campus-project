@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Modal from "../modal/Modal";
 import "./examList.scss";
 
-const ExamsList = () => {
+const ExamsList = ({options}) => {
     const [openModal, setOpenModal] = useState(false);
 
     const handleOpenModal = () => setOpenModal(true);
-    const handleCloseModal = () => setOpenModal(false); 
+    const handleCloseModal = () => setOpenModal(false);
+
     return(
         <>
             <table className="examsTable">
@@ -18,12 +19,18 @@ const ExamsList = () => {
                     </tr>
                 </thead>
                 <tbody className="examsTable-body">
-                    <tr className="exam-details">
-                        <td className="tableBody-element">6/10/2022</td>
-                        <td className="tableBody-element">19:00 hs</td>
-                        <td className="tableBody-element">Mafuyu Kirisu</td>
-                        <td className="tableBody-element"><button className="inscription-btn" onClick={handleOpenModal}>Inscribirme</button></td>
-                    </tr>
+                    {
+                        options.map((item) => {
+                            return(
+                                <tr className="exam-details" key={item.professor}>
+                                    <td className="tableBody-element">{item.date}</td>
+                                    <td className="tableBody-element">{item.time}</td>
+                                    <td className="tableBody-element">{item.professor}</td>
+                                    <td className="tableBody-element"><button className="inscription-btn" onClick={handleOpenModal}>Inscribirme</button></td>
+                                </tr>            
+                            )
+                        })
+                    }
                 </tbody>
             </table>
             {
