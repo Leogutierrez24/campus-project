@@ -9,3 +9,8 @@
 .addExam-title {
     @include titles-style(10px, 18px, #000, $title-font);
 }
+
+.examSubjects {
+    display: flex;
+    flex-direction: column;
+}

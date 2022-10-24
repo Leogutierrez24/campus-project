@@ -1,6 +1,10 @@
+@import "../assets/variables/variables";
+
 .examsTable {
     width: 100%;
     padding: 6px;
+    background-color: #f9f9f9;
+    color: #000;
 }
 
 .tableBody-element {
@@ -8,5 +12,13 @@
 }
 
 .inscription-btn {
+    width: 80px;
+    height: 24px;
+    font-family: $text-font;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(160, 255, 160);
     cursor: pointer;
 }
+

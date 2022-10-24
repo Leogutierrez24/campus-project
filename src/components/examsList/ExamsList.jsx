@@ -26,7 +26,11 @@ const ExamsList = ({options}) => {
                                     <td className="tableBody-element">{item.date}</td>
                                     <td className="tableBody-element">{item.time}</td>
                                     <td className="tableBody-element">{item.professor}</td>
-                                    <td className="tableBody-element"><button className="inscription-btn" onClick={handleOpenModal}>Inscribirme</button></td>
+                                    <td className="tableBody-element">
+                                        <button className="inscription-btn" onClick={handleOpenModal}>
+                                            Inscribirme
+                                        </button>
+                                    </td>
                                 </tr>            
                             )
                         })
