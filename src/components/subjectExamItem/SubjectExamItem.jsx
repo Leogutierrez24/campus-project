@@ -7,7 +7,7 @@ import "./subjectExamItem.scss";
 const SubjectExamItem = ({props}) => {
     return(
         <ToggleDiv divClass = "subjectExamItem" headerClass = "subjectExamItem-header" headerTitle = {props.name} headerImg = {downArrow}>
-            <ExamsList options={props.option} />
+            <ExamsList options={props} />
         </ToggleDiv>
     )
 }

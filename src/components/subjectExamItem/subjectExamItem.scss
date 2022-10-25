@@ -7,7 +7,6 @@
     color: #fff;
     font-family: $text-font;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .subjectExamItem-header {
@@ -16,6 +15,7 @@
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
     > img {
         filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(115deg) brightness(108%) contrast(108%);
     }
