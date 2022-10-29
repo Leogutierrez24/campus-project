@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import db from "../firebase/firebaseConfig";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import Modal from "../modal/Modal";
+import { ContextUser } from "../context/UserContext";
 import "./examList.scss";
 
 const ExamsList = ({options}) => {
     const [openModal, setOpenModal] = useState(false);
     const [inscription, setInscription] = useState({});
+    const { userLogged } = ContextUser();
 
     const handleOpenModal = (name, date, time, professor) => {
         setOpenModal(true);
@@ -26,13 +30,15 @@ const ExamsList = ({options}) => {
        setInscription(inscription);
     }
 
-    const sendInscription = () => {
-        console.log(`Te inscribiste a ${inscription.name}`);
+    const sendInscription = async () => {
+        const userInscriptionsRef = doc(db, "usersExamsInscriptions", userLogged.nFile);
+        await updateDoc(userInscriptionsRef, {
+            userInscription: arrayUnion(inscription)
+        });
         handleCloseModal();
         setInscription({});
     }
-
-    console.log(inscription)
+    console.log(options)
     return(
         <>
             <table className="examsTable">
@@ -73,7 +79,7 @@ const ExamsList = ({options}) => {
                                         <li>Docente: {inscription.professor}</li>
                                     </ul>
                                     <button onClick={sendInscription}>Aceptar</button>
-                                    <button>Cancelar</button>
+                                    <button onClick={handleCloseModal}>Cancelar</button>
                                 </div>
                             </Modal>     
             }

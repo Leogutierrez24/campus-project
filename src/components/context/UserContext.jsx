@@ -28,7 +28,7 @@ const UserProvider = ({ children }) => {
         setUserLogged({});
         setUserState(false);
     }
-    
+
     return(
         <UserContext.Provider value={{loginUser, logoutUser, userState, userLogged}}>
             {children}

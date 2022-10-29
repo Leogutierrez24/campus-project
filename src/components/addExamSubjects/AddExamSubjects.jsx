@@ -8,11 +8,12 @@ const AddExamSubjects = () => {
     return(
         <div className="examSubjects">
             {
-                loading === true
-                    ? <Loader />
-                    : examsData?.map((item) => {
-                        return <SubjectExamItem key={item.name} props={item}/>
-                    })
+                examsData !== undefined &&
+                    loading === true
+                        ? <Loader />
+                        : examsData?.map((item) => {
+                            return <SubjectExamItem key={item.name} props={item}/>
+                        })
                 
             }
         </div>
