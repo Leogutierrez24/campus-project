@@ -18,10 +18,10 @@ export const useGetExams = () => {
             });
 
             if(userExams?.length > 0){
-                let inscriptionsToShow = [];
+                let inscriptionsToShow = exams;
                 for(let i = 0; i < userExams.length; i++){
                     let elementResult = exams.find(e => e.name === userExams[i].name);
-                    if(elementResult === undefined) inscriptionsToShow = [...elementResult];
+                    if(elementResult !== undefined) inscriptionsToShow = inscriptionsToShow.filter(e => e.name !== elementResult.name);
                 }
                 setExamsData(inscriptionsToShow);
             } else {

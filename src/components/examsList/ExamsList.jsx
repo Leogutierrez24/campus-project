@@ -38,7 +38,7 @@ const ExamsList = ({options}) => {
         handleCloseModal();
         setInscription({});
     }
-    console.log(options)
+    
     return(
         <>
             <table className="examsTable">
