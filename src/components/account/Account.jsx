@@ -10,7 +10,7 @@ const Account = () => {
     return(
         <div className="account">
             <AccountTopbar />
-            <div style={{display: "flex"}}>
+            <div className="account-content">
                 {
                     (windowSize.innerWidth > 1024) ? <SideBar /> : null
                 }

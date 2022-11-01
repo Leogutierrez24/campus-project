@@ -4,9 +4,11 @@ import UserInformationForm from "../userInfomationForm/UserInformationForm";
 
 const UserProfile = () => {
     const [infoForm, setInfoForm] = useState(false);
+    
     const handleInfoForm = (value) => {
         setInfoForm(value);
     }
+    
     return(
         <>
         {

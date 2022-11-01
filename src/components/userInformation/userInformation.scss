@@ -1,21 +1,12 @@
 @import "../assets/variables/variables";
 
-.userProfile-container {
-    width: 100%;
-    height: calc(100vh - 80px);
-    padding: 35px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    > ul {
-        list-style: none;
-        font-family: $text-font;
-    }
+.userInfo-list {
+    list-style: none;
+    font-family: $text-font;
 }
 
-.userProfile-title, .userProfile-subtitle {
-    margin-bottom: 12px;
-    font-family: $title-font;
+.userProfile-subtitle {
+    @include titles-style(4px, 16px, #000, $title-font);
 }
 
 .userInfo-item {

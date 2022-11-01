@@ -1,7 +1,8 @@
-import { React } from "react";
-import { useGetUserData } from "../hooks/useGetUserData";
+import React from "react";
+import { ContentContainer, ContentTitle } from "../contentContainer/ContentContainer";
 import DataList from "../dataList/DataList";
 import Loader from "../loader/Loader";
+import { useGetUserData } from "../hooks/useGetUserData";
 import "./userInformation.scss";
 
 const UserInformation = ({handleInfoForm}) => {
@@ -12,8 +13,8 @@ const UserInformation = ({handleInfoForm}) => {
     }
 
     return(
-        <div className="userProfile-container">
-            <h3 className="userProfile-title">Datos de mi cuenta</h3>
+        <ContentContainer>
+            <ContentTitle titleText={"Datos de mi cuenta"} />
             {
                 (loading)
                     ? <Loader />
@@ -23,7 +24,7 @@ const UserInformation = ({handleInfoForm}) => {
                     </>
             }
             
-        </div>
+        </ContentContainer>
     );   
 }
 

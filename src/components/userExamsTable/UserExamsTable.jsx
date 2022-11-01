@@ -4,6 +4,7 @@ import db from "../firebase/firebaseConfig";
 import { ContextUser } from "../context/UserContext";
 import { useGetInscriptions } from "../hooks/useGetInscriptions";
 import Modal from "../modal/Modal";
+import { Table, TableBody, TableHead } from "../tables/Tables";
 import "./userExamsTable.scss";
 
 const UserExamsTable = ({props}) => {
@@ -36,25 +37,23 @@ const UserExamsTable = ({props}) => {
         <>
         {
             (props?.length !== 0)
-                ? <table className="userExams-table">
-                        <thead>
-                            <tr>
-                                <th>Asignatura</th>
-                                <th>Docente</th>
-                                <th>Fecha</th>
-                                <th>Horario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                ? <Table nameClass={"userExamsTable"}>
+                        <TableHead nameClass={"userExamsTable-header"}>
+                            <th>Asignatura</th>
+                            <th>Docente</th>
+                            <th>Fecha</th>
+                            <th>Horario</th>
+                        </TableHead>
+                        <TableBody nameClass={"userExamsTable-body"}>
                             {
                                 props?.map((item) => {
                                     return (
                                         <tr key={item.name}>
-                                            <td>{item.name}</td>
-                                            <td>{item.professor}</td>
-                                            <td>{item.date}</td>
-                                            <td>{item.time}</td>
-                                            <td>
+                                            <td className="userExamsTable-item">{item.name}</td>
+                                            <td className="userExamsTable-item">{item.professor}</td>
+                                            <td className="userExamsTable-item">{item.date}</td>
+                                            <td className="userExamsTable-item">{item.time}</td>
+                                            <td className="userExamsTable-item2">
                                                 <button className="cancel-btn" onClick={() => handleOpenModal(item.name)}>
                                                     cancelar inscripción
                                                 </button>
@@ -63,9 +62,8 @@ const UserExamsTable = ({props}) => {
                                     )
                                 })
                             }
-                        </tbody>
-                        
-                    </table>
+                        </TableBody>
+                    </Table>
                 : <p>¡No tienes inscripciones a examenes!</p>
         }
         {(handleModal) 

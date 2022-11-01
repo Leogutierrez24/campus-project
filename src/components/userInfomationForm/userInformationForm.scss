@@ -1,12 +1,5 @@
 @import "../assets/variables/variables";
 
-.userInformationForm-container {
-    width: 100%;
-    height: calc(100vh - 80px);
-    padding: 35px;
-    background-color: #fff;
-}
-
 .userInformationForm {
     width: 50%;
     display: flex;
@@ -20,11 +13,6 @@
         margin-bottom: 6px;
         font-family: $text-font;
     }
-}
-
-.formSubtitle {
-    margin-bottom: 12px;
-    font-family: $title-font;
 }
 
 .buttons-container {

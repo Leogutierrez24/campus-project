@@ -1,12 +1,12 @@
 import React from "react";
-import { useGetInscriptions } from "../hooks/useGetInscriptions";
 import UserExamsTable from "../userExamsTable/UserExamsTable";
 import Loader from "../loader/Loader";
+import { useGetInscriptions } from "../hooks/useGetInscriptions";
 
 const UserExamSubjects = () => {
     const { userExams, loading } = useGetInscriptions();
     return(
-        <div>
+        <div className="userExamsInscriptions-list">
             {
                 (loading) ? <Loader /> : <UserExamsTable props={userExams} />
             }

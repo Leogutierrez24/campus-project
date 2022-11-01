@@ -1,18 +1,18 @@
 import { React } from "react";
+import { ContentContainer, ContentTitle } from "../contentContainer/ContentContainer";
 import GradesTable from "../gradesTable/GradesTable";
 import Loader from "../loader/Loader";
 import { useGetGrades } from "../hooks/useGetGrades";
-import "./userGradesContainer.scss";
 
 const UserGradesContainer = () => {
     const { gradesList, loading } = useGetGrades();
     return(
-        <div className="grades-container">
-            <h3 className="grades-title">Mis calificaciones</h3>
+        <ContentContainer>
+            <ContentTitle titleText={"Mis calificaciones"} />
             {
                 (loading) ? <Loader /> : <GradesTable props={gradesList}/> 
             }
-        </div>
+        </ContentContainer>
     );
 }
 

@@ -1,16 +1,17 @@
 import { React } from "react";
 import "./addExamContainer.scss";
+import {ContentContainer, ContentTitle} from "../contentContainer/ContentContainer";
 import AddExamSubjects from "../addExamSubjects/AddExamSubjects";
 import UserExamSubjects from "../userExamSubjects/UserExamSubjects";
 
 const AddExamContainer = () => {
     return(
-        <div className="addExam-container">
-            <h3 className="addExam-title">Mis inscripciones</h3>
+        <ContentContainer>
+            <ContentTitle titleText={"Mis inscripciones"} />
             <UserExamSubjects />
-            <h3 className="addExam-title">Inscripción a finales</h3>
+            <ContentTitle titleText={"Inscripción a finales"} />
             <AddExamSubjects />
-        </div>
+        </ContentContainer>
     );
 }
 

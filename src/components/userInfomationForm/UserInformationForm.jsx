@@ -1,4 +1,5 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
+import { ContentContainer, ContentTitle } from "../contentContainer/ContentContainer";
 import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 import { useGetUserData } from "../hooks/useGetUserData";
@@ -41,12 +42,10 @@ const UserInformationForm = ({handleInfoForm}) => {
         handleInfoForm(false);
     }
 
-
-
     return(
-        <div className="userInformationForm-container">
+        <ContentContainer>
+            <ContentTitle titleText={"Información adicional"} />
             <form action="" className="userInformationForm">
-                <h3 className="formSubtitle">Información adicional</h3>
                 <label htmlFor="adress" className="inputReference"><span>Domicilio</span><input className="inputForm" type="text" id="adress" value={inputAdress} onChange={handleInputAdress} /></label>
                 <label htmlFor="telNumber" className="inputReference"><span>N° de telefono</span><input className="inputForm" type="text" id="telNumber" value={inputTel} onChange={handleInputTel} /></label>
                 <label htmlFor="personalEmail" className="inputReference"><span>Email personal</span><input className="inputForm" type="email" name="" id="personalEmail" value={inputMail} onChange={handleInputMail} /></label>
@@ -56,7 +55,7 @@ const UserInformationForm = ({handleInfoForm}) => {
                     <button className="cancelButton" disabled={buttonStatus} onClick={handleCancelButton}>Cancelar</button>
                 </div>
             </form>
-        </div>
+        </ContentContainer>
     );
 }
 
