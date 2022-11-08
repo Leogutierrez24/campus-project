@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import db from "../firebase/firebaseConfig";
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
-import Modal from "../modal/Modal";
 import { ContextUser } from "../context/UserContext";
+import Modal from "../modal/Modal";
+import {Table, TableHead, TableBody} from "../tables/Tables";
 import "./examList.scss";
 
 const ExamsList = ({options}) => {
@@ -41,23 +42,21 @@ const ExamsList = ({options}) => {
     
     return(
         <>
-            <table className="examsTable">
-                <thead className="examsTable-header">
-                    <tr>
-                        <th className="tableHeader-element">Fecha</th>
-                        <th className="tableHeader-element">Horario</th>
-                        <th className="tableHeader-element">Docente</th>
-                    </tr>
-                </thead>
-                <tbody className="examsTable-body">
+            <Table nameClass={"examsTable"}>
+                <TableHead nameClass={"examsTable-header"}>
+                    <th>Fecha</th>
+                    <th>Horario</th>
+                    <th>Docente</th>
+                </TableHead>
+                <TableBody nameClass={"examsTable-body"}>
                     {
                         options.option.map((item) => {
                             return(
-                                <tr className="exam-details" key={item.professor}>
-                                    <td className="tableBody-element">{item.date}</td>
-                                    <td className="tableBody-element">{item.time}</td>
-                                    <td className="tableBody-element">{item.professor}</td>
-                                    <td className="tableBody-element">
+                                <tr className="examTable-row" key={item.professor}>
+                                    <td>{item.date}</td>
+                                    <td>{item.time}</td>
+                                    <td>{item.professor}</td>
+                                    <td>
                                         <button className="inscription-btn" onClick={() => handleOpenModal(options.name, item.date, item.time, item.professor)}>
                                             Inscribirme
                                         </button>
@@ -66,8 +65,8 @@ const ExamsList = ({options}) => {
                             )
                         })
                     }
-                </tbody>
-            </table>
+                </TableBody>
+            </Table>
             {
                 openModal && <Modal handleCloseModal={handleCloseModal}>
                                 <div className="modal-body">

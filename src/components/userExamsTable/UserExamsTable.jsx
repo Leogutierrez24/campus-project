@@ -55,7 +55,7 @@ const UserExamsTable = ({props}) => {
                                             <td className="userExamsTable-item">{item.time}</td>
                                             <td className="userExamsTable-item2">
                                                 <button className="cancel-btn" onClick={() => handleOpenModal(item.name)}>
-                                                    cancelar inscripción
+                                                    cancelar
                                                 </button>
                                             </td>
                                         </tr>

@@ -1,5 +1,10 @@
 @import "../assets/variables/variables";
 
+.userExamsInscriptions-list {
+    display: flex;
+    justify-content: center;
+}
+
 .userExamsTable {
     border-collapse: collapse;
 }
@@ -10,9 +15,9 @@
 
 .userExamsTable-item {
     height: 30px;
-    padding-left: 3px;
     background-color: #c6ffc6;
     font-size: 14px;
+    text-align: center;
 }
 
 .userExamsTable-item2 {
@@ -27,6 +32,7 @@
     height: 25px;
     padding: 5px 3px;
     font-size: 11px;
+    letter-spacing: .5px;
     cursor: pointer;
     border: none;
     border-radius: 3px;

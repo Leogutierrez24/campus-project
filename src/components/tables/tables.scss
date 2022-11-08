@@ -8,4 +8,11 @@
 
 .tableHeader-row {
     height: 30px;
+    > th {
+        width: 160px;
+    }
+}
+
+.tableBody > tr > td {
+    max-width: 160px;
 }

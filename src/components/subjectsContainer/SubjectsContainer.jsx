@@ -9,7 +9,7 @@ const SubjectsContainer = () => {
     const { loading, subjects } = useGetSubjects();
     return(
         <ContentContainer>
-            <ContentTitle titleText={"Mis asignaturas"} />
+            <ContentTitle titleText={"Mis Materias"} />
             <div className="user-subjects">
                 {
                     (loading) 
