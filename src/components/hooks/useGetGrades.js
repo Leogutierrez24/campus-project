@@ -7,6 +7,7 @@ export const useGetGrades = () => {
     const [gradesList, setGradesList] = useState([]);
     const [loading, setLoading] = useState(false);
     const { userLogged } = ContextUser();
+
     useEffect(() => {
         setLoading(true);
         const getGradesData = async () => {
@@ -21,5 +22,6 @@ export const useGetGrades = () => {
         }
         getGradesData();
     }, [userLogged]);
+    
     return { gradesList, loading };
 }

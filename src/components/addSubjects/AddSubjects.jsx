@@ -7,7 +7,7 @@ import SubjectInscriptionList from "../subjectInscriptionList/SubjectInscription
 const AddSubjects = () => {
     return(
         <ContentContainer>
-            <ContentTitle titleText={"Mis Inscripciones"} />
+            <ContentTitle titleText={"Mis inscripciones"} />
             <UserSubjectInscription />
             <ContentTitle titleText={"Inscripciones Abiertas"} />
             <SubjectInscriptionList />

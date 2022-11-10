@@ -7,6 +7,7 @@ export const useGetInscriptions = () => {
     const [userExams, setUserExams] = useState();
     const { userLogged } = ContextUser({});
     const [loading, setLoading] = useState(false);
+    
     useEffect(() => {
         setLoading(true)
         const getExamInscriptions = async () => {
