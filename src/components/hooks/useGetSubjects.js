@@ -7,6 +7,7 @@ export const useGetSubjects = () => {
     const [loading, setLoading] = useState(false);
     const [subjects, setSubjects] = useState();
     const { userLogged } = ContextUser();
+    
     useEffect(() => {
         setLoading(true);
         const getUserSubjects = async () => { // for some reason trying to get by one document does not work

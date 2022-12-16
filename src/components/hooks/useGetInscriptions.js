@@ -5,7 +5,7 @@ import { ContextUser } from "../context/UserContext";
 
 export const useGetInscriptions = () => {
     const [userExams, setUserExams] = useState();
-    const { userLogged } = ContextUser({});
+    const { userLogged } = ContextUser();
     const [loading, setLoading] = useState(false);
     
     useEffect(() => {
@@ -15,7 +15,7 @@ export const useGetInscriptions = () => {
                 const docRef = doc(db, "usersExamsInscriptions", userLogged.nFile);
                 const docSnapshot = await getDoc(docRef);
                 if(docSnapshot.exists()) setUserExams(docSnapshot.data().userInscription);
-                else console.log("No existe ese archivo")
+                else console.log("No existe ese archivo");
             }
             setLoading(false);
         }

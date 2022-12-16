@@ -14,7 +14,7 @@ export const useGetGrades = () => {
             if(userLogged.nFile !== undefined){
                 const q = query(collection(db, "approvedSubjects"), where("nFile", "==", userLogged.nFile));
                 const querySnapshot = await getDocs(q);
-                querySnapshot.forEach((document) => {                    
+                querySnapshot.forEach((document) => {                                   
                     setGradesList(document.data().subjects);
                 });
                 setLoading(false);

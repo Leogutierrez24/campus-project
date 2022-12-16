@@ -35,7 +35,7 @@ const UserSubjectInscriptionList = ({userInscription}) => {
     return(
         <>
         {
-            (userInscription.length !== 0)
+            (userInscription?.length !== 0)
                 ? <Table>
                 <TableHead>
                     <th>Asignatura</th>

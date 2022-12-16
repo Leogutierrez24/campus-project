@@ -18,7 +18,7 @@ const GradesTable = ({props}) => {
                 {
                     props?.map((item) => {
                         return(
-                            <GradesItems props={item} key={item.id}/>
+                            <GradesItems props={item} key={item.code}/>
                         )
                     })
                 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import db from "../firebase/firebaseConfig";
 import {doc, getDoc} from "firebase/firestore";
+import db from "../firebase/firebaseConfig";
 import { ContextUser } from "../context/UserContext";
 
 export const useGetSubjectInscription = () => {
@@ -15,11 +15,11 @@ export const useGetSubjectInscription = () => {
                 const docRef = doc(db, "usersSubjectsInscriptions", userLogged.nFile);
                 const docSnapshot = await getDoc(docRef);
                 if(docSnapshot.exists()) setUserSubjectInscription(docSnapshot.data().userInscription);
-                else console.log("No existe ese archivo")
+                else console.log("No existe ese archivo");
             }
             setLoading(false);
         }
-
+        
         getUserInscriptions();
     }, [userLogged]);
     

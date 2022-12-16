@@ -10,7 +10,9 @@ const UserGradesContainer = () => {
         <ContentContainer>
             <ContentTitle titleText={"Mis calificaciones"} />
             {
-                (loading) ? <Loader /> : <GradesTable props={gradesList}/> 
+                (loading) 
+                    ? <Loader /> 
+                    : (gradesList.length !== 0) ? <GradesTable props={gradesList}/> : <p>No hay información aun.</p>
             }
         </ContentContainer>
     );
