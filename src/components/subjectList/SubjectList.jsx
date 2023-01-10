@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import db from "../firebase/firebaseConfig";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
+import { ContextUser } from "../context/UserContext";
 import Modal from "../modal/Modal";
 import { Table, TableBody, TableHead } from "../tables/Tables";
 import "./subjectList.scss";
@@ -6,6 +9,7 @@ import "./subjectList.scss";
 const SubjectList = ({options, name}) => {
     const [openModal, setOpenModal] = useState(false);
     const [inscription, setInscription] = useState({});
+    const { userLogged } = ContextUser();
 
     const handleOpenModal = (name, commission, modality, hour, campus, professor) => {
         setOpenModal(true);
@@ -27,7 +31,16 @@ const SubjectList = ({options, name}) => {
              professor: InscriptionProfessor
         };
         setInscription(inscription);
-     }
+    }
+
+    const sendInscription = async () => {
+        const userInscriptionsRef = doc(db, "usersSubjectsInscriptions", userLogged.nFile);
+        await updateDoc(userInscriptionsRef, {
+            userInscription: arrayUnion(inscription)
+        });
+        handleCloseModal();
+        setInscription({});
+    }
 
     return(
         <>
@@ -50,9 +63,9 @@ const SubjectList = ({options, name}) => {
                                 <td>{option.campus}</td>
                                 <td>{option.professor}</td>
                                 <td>
-                                        <button className="inscription-btn" onClick={() => {handleOpenModal(name, option.commission, option.modality, option.hour, option.campus, option.professor)}}>
-                                            Inscribirme
-                                        </button>
+                                    <button className="inscription-btn" onClick={() => {handleOpenModal(name, option.commission, option.modality, option.hour, option.campus, option.professor)}}>
+                                        Inscribirme
+                                    </button>
                                 </td>
                             </tr>
                         )
@@ -72,7 +85,7 @@ const SubjectList = ({options, name}) => {
                         <li>Campus: {inscription.campus}</li>
                         <li>Docente: {inscription.professor}</li>
                     </ul>
-                    <button>Aceptar</button>
+                    <button onClick={sendInscription}>Aceptar</button>
                     <button onClick={handleCloseModal}>Cancelar</button>
                 </div>
             </Modal>

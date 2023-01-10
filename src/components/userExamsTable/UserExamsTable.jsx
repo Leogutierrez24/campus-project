@@ -67,12 +67,12 @@ const UserExamsTable = ({props}) => {
                 : <p>¡No tienes inscripciones a examenes!</p>
         }
         {(handleModal) 
-                            ? <Modal handleCloseModal={handleCloseModal}>
-                               <p>Por favor, confirma que quieres desincribirte de este exámen:</p>
-                               <button onClick={deleteExamInscription}>Aceptar</button>
-                               <button onClick={handleCloseModal}>Cancelar</button>
-                            </Modal>
-                             : null   }
+            ? <Modal handleCloseModal={handleCloseModal}>
+                <p>Por favor, confirma que quieres desincribirte de este exámen:</p>
+                <button onClick={deleteExamInscription}>Aceptar</button>
+                <button onClick={handleCloseModal}>Cancelar</button>
+            </Modal>
+                : null   }
         </>
     );
 }

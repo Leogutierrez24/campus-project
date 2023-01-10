@@ -18,7 +18,7 @@ const UserInformationForm = ({handleInfoForm}) => {
     const handleInputMail = e => setInputMail(e.target.value);
 
     const sendUpdatedInfo = async (formData) => {
-        await updateDoc(doc(db, "userData", userInfo.id), formData);
+        await updateDoc(doc(db, "userData", userInfo.nFile), formData);
     }
 
     const handleChangeButton = (e) => {
