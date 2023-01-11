@@ -9,6 +9,7 @@ const Panel = ({logoutUser, userState, userInfo, loading}) => {
     const toggableDiv = useRef(null);
     const daArrow = useRef(null);
     const [divOpen, setDivOpen] = useState(false);
+    
     const handleOpenDiv = (e) => {
         if(divOpen){
             toggableDiv.current.classList.remove("itsOpen");
@@ -20,6 +21,7 @@ const Panel = ({logoutUser, userState, userInfo, loading}) => {
             setDivOpen(true);
         }
     }
+
     return(
         <div className="user-panel">
             {

@@ -1,8 +1,6 @@
 @import "../assets/variables/variables";
 
 .grades-table {
-    width: 100%;
-    padding: 5px;
     border-collapse: collapse;
     border: 1px solid $body-back-color;
     box-shadow: 0 0 4px 2px $shadow-color;
@@ -22,7 +20,7 @@
     height: 40px;
 }
 
-.grades-table__header-container {
+.grades-table__header {
     background-color: $body-back-color;
 }
 
@@ -40,7 +38,6 @@
 
 .header-element__calif {
     min-width: 33px;
-    min-height: fit-content;
     height: 40px;
 }
 
@@ -54,4 +51,16 @@
     min-width: 73px;
     min-height: fit-content;
     height: 40px;
+}
+
+@media only screen and (max-width: 642px){
+    .grade-element {
+        height: fit-content;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .header-element__cod, .header-element__subject, .header-element__calif, .header-element__status, .header-element__date {
+        min-width: 0;
+    }
 }
