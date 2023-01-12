@@ -4,6 +4,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 import { useGetUserData } from "../hooks/useGetUserData";
 import "./userInformationForm.scss";
+import Button from "../button/Button";
 
 const UserInformationForm = ({handleInfoForm}) => {
     const [inputAdress, setInputAdress] = useState("");
@@ -51,8 +52,8 @@ const UserInformationForm = ({handleInfoForm}) => {
                 <label htmlFor="personalEmail" className="inputReference"><span>Email personal</span><input className="inputForm" type="email" name="" id="personalEmail" value={inputMail} onChange={handleInputMail} /></label>
                 {/* <p>{errorMessage}</p> */}
                 <div className="buttons-container">
-                    <button className="changeButton"  disabled={buttonStatus} onClick={handleChangeButton}>Modificar</button>
-                    <button className="cancelButton" disabled={buttonStatus} onClick={handleCancelButton}>Cancelar</button>
+                    <Button nameClass={"backBlue medium"} text={"Modificar"} action={handleChangeButton} status={buttonStatus} />
+                    <Button nameClass={"backRed medium"} text={"Cancelar"} action={handleCancelButton} status={buttonStatus} />
                 </div>
             </form>
         </ContentContainer>

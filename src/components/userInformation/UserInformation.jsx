@@ -1,9 +1,9 @@
 import React from "react";
+import { useGetUserData } from "../hooks/useGetUserData";
 import { ContentContainer, ContentTitle } from "../contentContainer/ContentContainer";
 import DataList from "../dataList/DataList";
 import Loader from "../loader/Loader";
-import { useGetUserData } from "../hooks/useGetUserData";
-import "./userInformation.scss";
+import Button from "../button/Button";
 
 const UserInformation = ({handleInfoForm}) => {
     const { userInfo, loading } = useGetUserData();
@@ -20,10 +20,9 @@ const UserInformation = ({handleInfoForm}) => {
                     ? <Loader />
                     : <>
                         <DataList props={userInfo}/>
-                        <button onClick={handleChangeButton}>Modificar mis datos</button>
+                        <Button nameClass={"modInfo-btn backBlue large"} text={"Modificar mis datos"} action={handleChangeButton} />
                     </>
             }
-            
         </ContentContainer>
     );   
 }

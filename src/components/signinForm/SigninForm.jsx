@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { ContextUser } from "../context/UserContext";
+import Button from "../button/Button";
 import "./signinForm.scss";
 
 const SigninForm = ({ props }) => {
@@ -84,7 +85,7 @@ const SigninForm = ({ props }) => {
                 <input type="password" name="" id="sign-pass" className="inputForm" value={inputPassword} onChange={handleInputPassword} />
             </label>
             <input type="password" className="inputForm" placeholder="Confirme su contraseña" value={inputCheckPassword} onChange={handleInputCheckPassword} />
-            <button className="signin-btn" onClick={createAccount}>Confirmar</button>
+            <Button nameClass={"signin-btn backBlue"} text={"Confirmar"} action={createAccount} />
         </form>
     );
 }

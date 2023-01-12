@@ -1,6 +1,11 @@
 @import "../assets/variables/variables";
 
 .userInfo-list {
+    max-width: 400px;
+    margin-bottom: 15px;
+    border: 1px solid $shadow-color;
+    border-radius: 5px;
+    padding: 10px;
     list-style: none;
     font-family: $text-font;
 }
@@ -11,4 +16,9 @@
 
 .userInfo-item {
     margin-bottom: 6px;
+}
+
+.modInfo-btn {
+    margin-top: 10px;
+    align-self: center;
 }

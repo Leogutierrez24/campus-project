@@ -22,20 +22,3 @@
         transition: .2s ease-in-out;
     }
 }
-
-.login-btn, .signin-btn {
-    height: 30px;
-    background-color: $blue-color;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    color: #fff;
-    font-family: $text-font;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    transition: .1s ease-in-out;
-    &:active {
-        background-color: $blue-color-light;
-        transition: .1s ease-in-out;
-    }
-}

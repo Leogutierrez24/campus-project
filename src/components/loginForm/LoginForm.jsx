@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import Button from "../button/Button";
 import { ContextUser } from "../context/UserContext";
 import "./loginForm.scss";
 
@@ -26,7 +27,7 @@ const LoginForm = () => {
         <form className="login-form">
             <input type="mail" placeholder="Email" name="user" id="user" className="inputForm" onChange={handleMailInput} />
             <input type="password" name="password" id="log-pass" className="inputForm" placeholder="contraseña" onChange={handlePasswordInput}/>
-            <button className="login-btn" onClick={handleSubmit}>Ingresar</button>
+            <Button nameClass={"login-btn backBlue"} text={"Ingresar"} action={handleSubmit} />
             {
                 (inputsError) ? <p>El usuario o la contraseña no son correctos</p> : null
             }

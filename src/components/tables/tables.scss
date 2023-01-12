@@ -17,3 +17,26 @@
 .tableBody > tr > td {
     max-width: 160px;
 }
+
+@media only screen and (max-width: 425px){
+    .tableBody > tr > td {
+        font-size: 12px;
+    }
+    
+    .tableHeader-row {
+        > th {
+            font-size: 14px;
+        }
+    }   
+}
+@media only screen and (max-width: 320px){
+    .tableBody > tr > td {
+        font-size: 10px;
+    }
+    
+    .tableHeader-row {
+        > th {
+            font-size: 12px;
+        }
+    }
+}
