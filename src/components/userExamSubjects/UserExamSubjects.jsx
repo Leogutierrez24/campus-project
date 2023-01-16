@@ -1,10 +1,11 @@
 import React from "react";
 import UserExamsTable from "../userExamsTable/UserExamsTable";
 import Loader from "../loader/Loader";
-import { useGetInscriptions } from "../hooks/useGetInscriptions";
+import { useGetInscription } from "../hooks/useGetInscription";
 
 const UserExamSubjects = () => {
-    const { userExams, loading } = useGetInscriptions();
+    const { document: userExams, loading, error } = useGetInscription("usersExamsInscriptions");
+
     return(
         <div className="userExamsInscriptions-list">
             {

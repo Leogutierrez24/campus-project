@@ -1,13 +1,13 @@
 import {useState, useEffect} from "react";
 import db from "../firebase/firebaseConfig";
 import {collection, getDocs} from "firebase/firestore";
-import { useGetInscriptions } from "./useGetInscriptions";
 import { useGetGrades } from "./useGetGrades";
+import { useGetInscription } from "./useGetInscription";
 
 export const useGetExams = () => {
     const [examsData, setExamsData] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { userExams } = useGetInscriptions();
+    const { document: userExams } = useGetInscription("usersExamsInscriptions");
     const { gradesList } = useGetGrades();
 
     useEffect(() => {

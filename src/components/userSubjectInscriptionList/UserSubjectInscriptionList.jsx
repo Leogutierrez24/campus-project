@@ -3,14 +3,14 @@ import { ContextUser } from "../context/UserContext";
 import db from "../firebase/firebaseConfig";
 import { doc, updateDoc } from "firebase/firestore";
 import { Table, TableHead, TableBody } from "../tables/Tables";
-import { useGetSubjectInscription } from "../hooks/useGetSubjectInscription";
+import { useGetInscription } from "../hooks/useGetInscription";
 import Modal from "../modal/Modal";
 
-const UserSubjectInscriptionList = ({userInscription}) => {
+const UserSubjectInscriptionList = ({ userInscription }) => {
     const [openModal, setOpenModal] = useState(false);
     const { userLogged } = ContextUser();
     const [inscriptionName, setInscriptionName] = useState("");
-    const { userSubjectInscription } = useGetSubjectInscription();
+    const { document: userSubjectInscription } = useGetInscription("usersSubjectsInscriptions");
 
     const handleOpenModal = (name) => {
         setOpenModal(true);

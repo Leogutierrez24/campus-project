@@ -2,13 +2,13 @@ import {useState, useEffect} from "react";
 import { ContextUser } from "../context/UserContext";
 import db from "../firebase/firebaseConfig";
 import {collection, getDocs} from "firebase/firestore";
-import { useGetSubjectInscription } from "./useGetSubjectInscription";
+import { useGetInscription } from "./useGetInscription";
 
 export const useGetSubjectsList = () => {
     const [subjectItem, setSubjectItems] = useState();
     const [loading, setLoading] = useState(false);
     const { userLogged } = ContextUser();
-    const { userSubjectInscription } = useGetSubjectInscription(); 
+    const { document: userSubjectInscription } = useGetInscription("usersSubjectsInscriptions");
 
     useEffect(() => {
         setLoading(true);

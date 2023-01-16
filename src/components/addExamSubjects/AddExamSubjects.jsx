@@ -5,6 +5,7 @@ import { useGetExams } from "../hooks/useGetExams";
 
 const AddExamSubjects = () => {
     const {loading, examsData} = useGetExams();
+    
     return(
         <div className="examSubjects">
             {

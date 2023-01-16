@@ -1,16 +1,16 @@
 import React from "react";
 import UserSubjectInscriptionList from "../userSubjectInscriptionList/UserSubjectInscriptionList";
-import { useGetSubjectInscription } from "../hooks/useGetSubjectInscription";
+import { useGetInscription } from "../hooks/useGetInscription";
 import Loader from "../loader/Loader";
 
 const UserSubjectInscription = () => {
-    const { userSubjectInscription, loading } = useGetSubjectInscription();
+    const { document: userSubjectInscription, loading, error } = useGetInscription("usersSubjectsInscriptions");
 
     return(
         <div>
-            {
-                (loading) ? <Loader /> : <UserSubjectInscriptionList userInscription={userSubjectInscription} />
-            }
+            {error && <p>Algo fallo!!!</p>}
+            {loading ? <Loader /> : <UserSubjectInscriptionList userInscription={userSubjectInscription} />}
+            {(!loading && userSubjectInscription?.length === 0) && <p>No hay subscripciones a materias</p>} 
         </div>
     );
 }

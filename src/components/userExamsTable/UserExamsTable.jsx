@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { doc, updateDoc } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
 import { ContextUser } from "../context/UserContext";
-import { useGetInscriptions } from "../hooks/useGetInscriptions";
+import { useGetInscription } from "../hooks/useGetInscription";
 import Modal from "../modal/Modal";
 import { Table, TableBody, TableHead } from "../tables/Tables";
 import "./userExamsTable.scss";
@@ -11,7 +11,7 @@ const UserExamsTable = ({props}) => {
     const [inscriptionName, setInscriptionName] = useState("");
     const [handleModal, setHandleModal] = useState(false);
     const { userLogged } = ContextUser();
-    const { userExams } = useGetInscriptions();
+    const { document: userExams } = useGetInscription("usersExamsInscriptions");
     
     const handleOpenModal = (name) => {
         setHandleModal(true);
